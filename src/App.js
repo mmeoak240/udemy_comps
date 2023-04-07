@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Link from "./components/Link";
+import Route from "./components/Route";
+import AccordionPage from "./pages/AccordionPage";
+import DropdownPage from "./pages/DropdownPage";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<Link to="/accordion">Go to accordion</Link>
+			<Link to="/dropdown">Go to dropdown</Link>
+			<div>
+				<Route path="/accordion">
+					<AccordionPage />
+				</Route>
+				<Route path="/dropdown">
+					<DropdownPage />
+				</Route>
+			</div>
+		</div>
+	);
 }
 
 export default App;
