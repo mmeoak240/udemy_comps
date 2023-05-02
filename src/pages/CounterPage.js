@@ -2,7 +2,6 @@ import { produce } from "immer";
 import Button from "../components/Button";
 import { useReducer } from "react";
 import Panel from "../components/Panel";
-// import useCounter from "../hooks/use-counter";
 
 const INCREMENT_COUNT = "increment";
 const SET_VALUE_TO_ADD = "set-value-to-add";
