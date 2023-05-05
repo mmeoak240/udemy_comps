@@ -44,7 +44,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ## Sidebar
 
 Props to pass in:
-Array of objects. Objects should have keys of "label" and "path".
+Array of objects. Objects should have keys of "id", "label" and "path".
 The "label" keys value will be the visible text of the link.
 The "path" keys value will be the URL path to be navigated to.
 
@@ -62,7 +62,7 @@ Example: const links = [
 ## Dropdown
 
 Props to pass in:
-Array of objects. Objects should have keys of "label" and "value".
+Array of objects. Objects should have keys of "id", "label" and "value".
 The "label" keys value will appear as the visible text in list of dropdown options.
 The "value" keys value will be the data to be operated on depending on the selected option.
 
@@ -78,6 +78,8 @@ Example: const options = [
 
 Props to pass in:
 Array of objects. Objects should have keys of "id", "label", and "content"
+The "label" keys value will be the visible text for accordion options.
+The "content" keys value will be the visible text of the expanded option.
 
 Example:
 
@@ -102,10 +104,10 @@ content:
 ## Button
 
 Use as you would a JSX button element. Pass only one prop of either "primary, secondary, warning, success or danger" or none.
-Pass in props of "rounded", "outline" or both if you would like their styling to be applied else omit them. Event handlers can be applied.
+Pass in props of "rounded", "outline" or both if you would like their styling to be applied else omit them. Event handlers can be passed down.
 
 ```
-Example: <Button>This is a custom button</Button>
+Example: <Button success rounded outline className="mb-5" onClick={handleClick}>This is a custom button</Button>
 ```
 
 ## Modal
