@@ -39,32 +39,77 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+# Components explained
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Sidebar
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Props to pass in:
+Array of objects. Objects should have keys of "label" and "path".
+The "label" keys value will be the visible text of the link.
+The "path" keys value will be the URL path to be navigated to.
 
-### Code Splitting
+```
+Example: const links = [
+{ label: "Dropdown", path: "/" },
+{ label: "Accordion", path: "/accordion" },
+{ label: "Buttons", path: "/buttons" },
+{ label: "Modal", path: "/modal" },
+{ label: "Table", path: "/table" },
+{ label: "Counter", path: "/counter" },
+];
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Dropdown
 
-### Analyzing the Bundle Size
+Props to pass in:
+Array of objects. Objects should have keys of "label" and "value".
+The "label" keys value will appear as the visible text in list of dropdown options.
+The "value" keys value will be the data to be operated on depending on the selected option.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+Example: const options = [
+{ label: "Red", value: "red" },
+{ label: "Green", value: "green" },
+{ label: "Blue", value: "blue" },
+];
+```
 
-### Making a Progressive Web App
+## Accordion
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Props to pass in:
+Array of objects. Objects should have keys of "id", "label", and "content"
 
-### Advanced Configuration
+Example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+const items = [
+{
+id: 1,
+label: "Can I use React on a project?",
+content:
+"You can use react on any project you want.You can use react on any project you want.You can use react on any project you want.You can use react on any project you want. ",
+},
+{
+id: 2,
+label: "What day is it?",
+content:
+"You can use react on any project you want.You can use react on any project you want.You can use react on any project you want.You can use react on any project you want.",
+}
+]
 
-### Deployment
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Button
 
-### `npm run build` fails to minify
+Use as you would a JSX button element. Pass only one prop of either "primary, secondary, warning, success or danger" or none.
+Pass in props of "rounded", "outline" or both if you would like their styling to be applied else omit them. Event handlers can be applied.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+Example: <Button>This is a custom button</Button>
+```
+
+## Modal
+
+## Table
+
+## Counter

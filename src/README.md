@@ -72,7 +72,3 @@ Example: <Button>This is a custom button</Button>
 ## Table
 
 ## Counter
-
-```
-
-```
