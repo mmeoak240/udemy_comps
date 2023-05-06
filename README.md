@@ -118,41 +118,38 @@ Only need to change text of the Button and Modal components inside "actionBar" v
 
 Example:
 
-````
 const actionBar = (
-		<div>
-			<Button onClick={handleClose} primary>
-				<mark>Accept</mark>
-			</Button>
-		</div>
-	);
-	const modal = (
-		<Modal onClose={handleClose} actionBar={actionBar}>
-			<mark><p>Here is an important agreement for you to accept</p></mark>
-		</Modal>
-	);
-	return (
-		<div>
-			<Button onClick={handleClick} primary>
-				<mark>Open Modal</mark>
-			</Button>
-			{showModal && modal}
-      <mark>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-				condimentum, purus sed placerat ullamcorper, erat ligula gravida lacus,
-				tempor auctor velit massa et felis. Curabitur sed lectus et ante
-				porttitor volutpat. Ut eleifend dapibus erat sit amet iaculis.
-				Suspendisse potenti. Nullam id justo ut justo gravida mollis. Donec
-				justo felis, hendrerit quis fringilla quis, faucibus vitae ligula.
-				Curabitur mollis vulputate nulla sed auctor. Cras id tortor tortor.
-			</p>
-      </mark>
-      ```
+<div>
+<Button onClick={handleClose} primary>
+<mark>Accept</mark>
+</Button>
+</div>
+);
+const modal = (
+<Modal onClose={handleClose} actionBar={actionBar}>
+<mark><p>Here is an important agreement for you to accept</p></mark>
+</Modal>
+);
+return (
+<div>
+<Button onClick={handleClick} primary>
+<mark>Open Modal</mark>
+</Button>
+{showModal && modal}
+<mark>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+condimentum, purus sed placerat ullamcorper, erat ligula gravida lacus,
+tempor auctor velit massa et felis. Curabitur sed lectus et ante
+porttitor volutpat. Ut eleifend dapibus erat sit amet iaculis.
+Suspendisse potenti. Nullam id justo ut justo gravida mollis. Donec
+justo felis, hendrerit quis fringilla quis, faucibus vitae ligula.
+Curabitur mollis vulputate nulla sed auctor. Cras id tortor tortor.
+</p>
+</mark>
 
 ## Table
 
 ## Counter
 
 No changes needed.
-````
