@@ -123,7 +123,7 @@ Example:
 const actionBar = (
 <div>
 <Button onClick={handleClose} primary>
-==Accept==
+:arrow_forward: Accept
 </Button>
 </div>
 );
