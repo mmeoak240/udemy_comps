@@ -43,8 +43,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Sidebar
 
-Props to pass in:
-Array of objects. Objects should have keys of "id", "label" and "path".
+Renders list of custom Link components.
+Props to pass into link components:
+Array of objects. Objects should have keys of "label" and "path".
 The "label" keys value will be the visible text of the link.
 The "path" keys value will be the URL path to be navigated to.
 
@@ -112,6 +113,46 @@ Example: <Button success rounded outline className="mb-5" onClick={handleClick}>
 
 ## Modal
 
+All necessary props are in place.
+Only need to change text of the Button and Modal components inside "actionBar" variable as well as text for Button componenet in return value of ModalPage and any content you wish for the page.
+
+Example:
+
+````
+const actionBar = (
+		<div>
+			<Button onClick={handleClose} primary>
+				<mark>Accept</mark>
+			</Button>
+		</div>
+	);
+	const modal = (
+		<Modal onClose={handleClose} actionBar={actionBar}>
+			<mark><p>Here is an important agreement for you to accept</p></mark>
+		</Modal>
+	);
+	return (
+		<div>
+			<Button onClick={handleClick} primary>
+				<mark>Open Modal</mark>
+			</Button>
+			{showModal && modal}
+      <mark>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+				condimentum, purus sed placerat ullamcorper, erat ligula gravida lacus,
+				tempor auctor velit massa et felis. Curabitur sed lectus et ante
+				porttitor volutpat. Ut eleifend dapibus erat sit amet iaculis.
+				Suspendisse potenti. Nullam id justo ut justo gravida mollis. Donec
+				justo felis, hendrerit quis fringilla quis, faucibus vitae ligula.
+				Curabitur mollis vulputate nulla sed auctor. Cras id tortor tortor.
+			</p>
+      </mark>
+      ```
+
 ## Table
 
 ## Counter
+
+No changes needed.
+````
