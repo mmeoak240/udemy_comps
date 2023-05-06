@@ -118,6 +118,7 @@ Only need to change text of the Button and Modal components inside "actionBar" v
 
 Example:
 
+```
 const actionBar = (
 <div>
 <Button onClick={handleClose} primary>
@@ -147,6 +148,7 @@ justo felis, hendrerit quis fringilla quis, faucibus vitae ligula.
 Curabitur mollis vulputate nulla sed auctor. Cras id tortor tortor.
 </p>
 </mark>
+```
 
 ## Table
 
