@@ -115,7 +115,7 @@ Example: <Button success rounded outline className="mb-5" onClick={handleClick}>
 
 All necessary props are in place.
 Only need to change text of the Button and Modal components inside "actionBar" variable as well as text for Button componenet in return value of ModalPage and any content you wish for the page.
-<mark style="background-color: #FFFF00">Accept</mark>
+==Accept==
 
 Example:
 
@@ -123,7 +123,7 @@ Example:
 const actionBar = (
 <div>
 <Button onClick={handleClose} primary>
-<mark style="background-color: #FFFF00">Accept</mark>
+==Accept==
 </Button>
 </div>
 );
