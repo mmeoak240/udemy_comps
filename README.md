@@ -122,7 +122,7 @@ Example:
 const actionBar = (
 <div>
 <Button onClick={handleClose} primary>
-<mark>Accept</mark>
+<mark style="background-color: #FFFF00">Accept</mark>
 </Button>
 </div>
 );
