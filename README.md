@@ -151,8 +151,58 @@ Curabitur mollis vulputate nulla sed auctor. Cras id tortor tortor.
 </mark>
 ```
 
-## Table
+## Table/Sortable Table
 
+Props to pass in: 
+Array of objects. Each object will be used to create a single table row.
+Example:
+```
+const data = [
+		{ name: "Orange", color: "bg-orange-500", score: 5 },
+		{ name: "Apple", color: "bg-red-500", score: 3 },
+		{ name: "Banana", color: "bg-yellow-500", score: 1 },
+		{ name: "Lime", color: "bg-green-500", score: 4 },
+	];
+```
+Array of objects. Each object will control how to configure each row.
+Example:
+```
+const config = [
+		{
+			label: "Fruit",
+			render: (fruit) => fruit.name,
+			sortValue: (fruit) => fruit.name,
+		},
+		{
+			label: "Color",
+			render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`} />,
+		},
+		{
+			label: "Score",
+			render: (fruit) => fruit.score,
+			sortValue: (fruit) => fruit.score,
+		},
+	];
+```
+
+Create your own keyFn based on data you are using for table. the keyFn will act as your key for list creation. In the Table component 
+pass in "rowData" to the keyFn on the <tr>.
+Example: 
+```
+const keyFn = (fruit) => {
+		return fruit.name;
+	};
+
+    ---
+return (
+			<tr className="border-b" key={keyFn(rowData)}>
+				{renderedCells}
+			</tr>
+		);
+```
+Create a getSortValue function 
+
+to make a column sortable add a "sortValue" key to config object with a value of a function to determine what value to sort by as well as changing the <th> to something else.
 ## Counter
 
-No changes needed.
+No props needed.
