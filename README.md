@@ -43,9 +43,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Sidebar
 
-Renders list of custom Link components.
+Renders a list of custom Link components.
 Props to pass into link components:
-Array of objects. Objects should have keys of "label" and "path".
+An array of objects. Objects should have keys of "label" and "path".
 The "label" keys value will be the visible text of the link.
 The "path" keys value will be the URL path to be navigated to.
 
@@ -90,15 +90,16 @@ const items = [
 id: 1,
 label: "Can I use React on a project?",
 content:
-"You can use react on any project you want.You can use react on any project you want.You can use react on any project you want.You can use react on any project you want. ",
+"You can use react on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. ",
 },
 {
 id: 2,
 label: "What day is it?",
 content:
-"You can use react on any project you want.You can use react on any project you want.You can use react on any project you want.You can use react on any project you want.",
+"You can use react on any project you want. You can use React on any project you want. You can use React on any project you want. You can use react on any project you want.",
 }
 ]
+
 
 ```
 
@@ -153,56 +154,55 @@ Curabitur mollis vulputate nulla sed auctor. Cras id tortor tortor.
 
 ## Table/Sortable Table
 
-Props to pass in: 
-Array of objects. Each object will be used to create a single table row.
-Example:
+Code that needs to be provided by user of this componenet.
+
+### In the TablePage component
+
+- A variable called "data" pointing to an array of objects that will represent rows of the table.
+
 ```
 const data = [
-		{ name: "Orange", color: "bg-orange-500", score: 5 },
-		{ name: "Apple", color: "bg-red-500", score: 3 },
-		{ name: "Banana", color: "bg-yellow-500", score: 1 },
-		{ name: "Lime", color: "bg-green-500", score: 4 },
-	];
+    { name: "Orange", color: "bg-orange-500", score: 5 },
+    { name: "Apple", color: "bg-red-500", score: 3 },
+    { name: "Banana", color: "bg-yellow-500", score: 1 },
+    { name: "Lime", color: "bg-green-500", score: 4 },
+  ];
 ```
-Array of objects. Each object will control how to configure each row.
-Example:
+
+- A variable called "config" pointing to an array of objects that will control how to configure table data. add the "sortValue" property to make that column sortable.
+
 ```
 const config = [
-		{
-			label: "Fruit",
-			render: (fruit) => fruit.name,
-			sortValue: (fruit) => fruit.name,
-		},
-		{
-			label: "Color",
-			render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`} />,
-		},
-		{
-			label: "Score",
-			render: (fruit) => fruit.score,
-			sortValue: (fruit) => fruit.score,
-		},
-	];
+    {
+      label: "Fruit",
+      render: (fruit) => fruit.name,
+      sortValue: (fruit) => fruit.name,
+    },
+    {
+      label: "Color",
+      render: (fruit) => <div className={`p-3 m-2 ${fruit.color}`} />,
+    },
+  ];
+
+
 ```
 
-Create your own keyFn based on data you are using for table. the keyFn will act as your key for list creation. In the Table component 
-pass in "rowData" to the keyFn on the <tr>.
-Example: 
+- A variable called "keyFn" that points to a function that returns a key to be used in list creation.
+
 ```
 const keyFn = (fruit) => {
-		return fruit.name;
-	};
-
-    ---
-return (
-			<tr className="border-b" key={keyFn(rowData)}>
-				{renderedCells}
-			</tr>
-		);
+    return fruit.name;
+  };
 ```
-Create a getSortValue function 
 
-to make a column sortable add a "sortValue" key to config object with a value of a function to determine what value to sort by as well as changing the <th> to something else.
+### In the SortableTable component
+
+- Replace the properties being accesed on the "column" object with the property needed according to your needs.
+
+### In the Table component
+
+- Replace the properties being accesed on the "column" object with the property needed according to your needs.
+
 ## Counter
 
-No props needed.
+No props are needed.
